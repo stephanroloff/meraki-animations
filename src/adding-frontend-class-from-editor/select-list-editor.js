@@ -5,12 +5,15 @@
 const { createHigherOrderComponent } = wp.compose;
 const { InspectorControls } = wp.blockEditor;
 const { PanelBody, SelectControl } = wp.components;
+import { __experimentalNumberControl as NumberControl } from '@wordpress/components';
 import { allowedBlockNames } from "./inputs";
 import saveData from "./save-data";
 
 const withMyPluginControls = createHigherOrderComponent( ( BlockEdit ) => {
     return ( props ) => {
         const { attributes, setAttributes } = props;
+
+        console.log(attributes.myAnimationDelayValue);
 
         if (allowedBlockNames.length > 0 && (!allowedBlockNames.includes(props.name))) {
             return <BlockEdit { ...props } />;
@@ -21,6 +24,10 @@ const withMyPluginControls = createHigherOrderComponent( ( BlockEdit ) => {
         // Definir el atributo myDropdownAnimationValue si no está definido
         if (typeof attributes.myDropdownAnimationValue === 'undefined') {
             setAttributes({ myDropdownAnimationValue: 'none' });
+        }
+        // Definir el atributo myDropdownAnimationValue si no está definido
+        if (typeof attributes.myDropdownAnimationValue === 'undefined') {
+            setAttributes({ myAnimationDelayValue: '0' });
         }
 
         return (
@@ -44,6 +51,16 @@ const withMyPluginControls = createHigherOrderComponent( ( BlockEdit ) => {
                                 { label: 'Fade In Bottom', value: 'fade-in-bottom' },
                             ]}
                             onChange={(value) => setAttributes({ myDropdownAnimationValue: value })}
+                        />
+                        <NumberControl
+                            label="Choose an option (miliseconds)"
+                            onChange={(value) => setAttributes({ myAnimationDelayValue: value })}
+                            // onChange={(value) => console.log(typeof(value))}
+                            step={1}
+                            value={attributes.myAnimationDelayValue}
+                            max={ 10000 }
+                            min={ 0 }
+                            required
                         />
                     </PanelBody>
                 </InspectorControls>

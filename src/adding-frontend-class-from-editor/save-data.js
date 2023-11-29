@@ -24,14 +24,13 @@ export default function saveData() {
         }
 
         if(selectedBlock.attributes.myAnimationDelayValue){
-            // blockClasses.push('myAnimationDelayValue');
+            let delayClass = `animation-delay-${selectedBlock.attributes.myAnimationDelayValue}`
+            blockClasses.push(delayClass);
         }
-
-        console.log("blockClasses", blockClasses);
-        console.log("blockClasses", ...blockClasses);
-        console.log("blockClasses", typeof(blockClasses));
-
+        
+        let blockClassesDestructured = `${blockClasses.join(' ')}`;
+        
         // Updates the block's classes in the database using the dispatch function.
-        wp.data.dispatch('core/block-editor').updateBlockAttributes(selectedBlock.clientId, { className: `${blockClasses}` });
+        wp.data.dispatch('core/block-editor').updateBlockAttributes(selectedBlock.clientId, { className: blockClassesDestructured });
     }
 }

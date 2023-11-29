@@ -10,6 +10,10 @@ const setDefaultValue = (settings, blockName) => {
                 type: 'string',
                 default: 'none',
             },
+            myAnimationDelayValue: {
+                type: 'string',
+                default: '0',
+            },
         };
         return settings;
         
