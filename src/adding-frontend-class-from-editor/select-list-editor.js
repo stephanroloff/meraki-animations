@@ -13,13 +13,9 @@ const withMyPluginControls = createHigherOrderComponent( ( BlockEdit ) => {
     return ( props ) => {
         const { attributes, setAttributes } = props;
 
-        console.log(attributes.myAnimationDelayValue);
-
         if (allowedBlockNames.length > 0 && (!allowedBlockNames.includes(props.name))) {
             return <BlockEdit { ...props } />;
         }
-
-        saveData();
         
         // Definir el atributo myDropdownAnimationValue si no está definido
         if (typeof attributes.myDropdownAnimationValue === 'undefined') {
@@ -30,6 +26,8 @@ const withMyPluginControls = createHigherOrderComponent( ( BlockEdit ) => {
             setAttributes({ myAnimationDelayValue: '0' });
         }
 
+        saveData();
+
         return (
             <>
                 <BlockEdit { ...props } />
@@ -38,9 +36,9 @@ const withMyPluginControls = createHigherOrderComponent( ( BlockEdit ) => {
                         title={'Animations for Block'}
                         initialOpen={false}
                     >
-                        <p>Enter a description:</p>
+                        <p>Animation to be applied to this block</p>
                         <SelectControl
-                            label="Elige una opción"
+                            label="Choose an option"
                             value={attributes.myDropdownAnimationValue}
                             options={[
                                 { label: 'None', value: 'none' },
@@ -53,7 +51,7 @@ const withMyPluginControls = createHigherOrderComponent( ( BlockEdit ) => {
                             onChange={(value) => setAttributes({ myDropdownAnimationValue: value })}
                         />
                         <NumberControl
-                            label="Choose an option (miliseconds)"
+                            label="Delay (miliseconds)"
                             onChange={(value) => setAttributes({ myAnimationDelayValue: value })}
                             // onChange={(value) => console.log(typeof(value))}
                             step={1}
