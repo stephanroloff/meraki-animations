@@ -4,10 +4,10 @@
 
 const { createHigherOrderComponent } = wp.compose;
 const { InspectorControls } = wp.blockEditor;
-const { PanelBody, SelectControl } = wp.components;
-import { __experimentalNumberControl as NumberControl } from '@wordpress/components';
+const { PanelBody } = wp.components;
 import { allowedBlockNames } from "./inputs";
 import saveData from "./save-data";
+import PanelBodyIntern from './components/PanelBodyInternElements';
 
 const withMyPluginControls = createHigherOrderComponent( ( BlockEdit ) => {
     return ( props ) => {
@@ -37,29 +37,9 @@ const withMyPluginControls = createHigherOrderComponent( ( BlockEdit ) => {
                         initialOpen={false}
                     >
                         <p>Animation to be applied to this block</p>
-                        <SelectControl
-                            label="Choose an option"
-                            value={attributes.myDropdownAnimationValue}
-                            options={[
-                                { label: 'None', value: 'none' },
-                                { label: 'Fade In', value: 'fade-in' },
-                                { label: 'Fade In Left', value: 'fade-in-left' },
-                                { label: 'Fade In Right', value: 'fade-in-right' },
-                                { label: 'Fade In Top', value: 'fade-in-top' },
-                                { label: 'Fade In Bottom', value: 'fade-in-bottom' },
-                            ]}
-                            onChange={(value) => setAttributes({ myDropdownAnimationValue: value })}
-                        />
-                        <NumberControl
-                            label="Delay (miliseconds)"
-                            onChange={(value) => setAttributes({ myAnimationDelayValue: value })}
-                            // onChange={(value) => console.log(typeof(value))}
-                            step={1}
-                            value={attributes.myAnimationDelayValue}
-                            max={ 10000 }
-                            min={ 0 }
-                            required
-                        />
+
+                        <PanelBodyIntern properties = {props}/>
+                    
                     </PanelBody>
                 </InspectorControls>
             </>
