@@ -5,13 +5,97 @@
 export let allowedBlockNames = [];
 
 
-//Animations Names Array
-//Es la lista de las animaciones existentes que aparecen en el select en el editor.
-export let animationNameArray = [
-    { label: 'None', value: 'none' },
-    { label: 'Fade In', value: 'fade-in' },
-    { label: 'Fade In Left', value: 'fade-in-left' },
-    { label: 'Fade In Right', value: 'fade-in-right' },
-    { label: 'Fade In Top', value: 'fade-in-top' },
-    { label: 'Fade In Bottom', value: 'fade-in-bottom' },
+//All Inputs
+
+export let allInputsEditor = [
+    {   
+        componentType: 'SelectControl',
+        label: "Animations name",
+        attrDefValue:{
+            variableName: 'myDropdownAnimationValue',
+            type: 'string',
+            default: 'none',
+        },
+        options:[
+            { label: 'None', value: 'none' },
+            { label: 'Fade In', value: 'fade-in' },
+            { label: 'Fade In Left', value: 'fade-in-left' },
+            { label: 'Fade In Right', value: 'fade-in-right' },
+            { label: 'Fade In Top', value: 'fade-in-top' },
+            { label: 'Fade In Bottom', value: 'fade-in-bottom' },
+        ],
+    },
+    {   
+        componentType: 'SelectControl',
+        label: "Timing Function",
+        attrDefValue:{
+            variableName: 'myDropdownTimingFunctionValue',
+            type: 'string',
+            default: 'none',
+        },
+        options:[
+            { label: 'None', value: '0' },
+            { label: 'ease', value: '1' },
+            { label: 'linear', value: '2' },
+            { label: 'ease-in', value: '3' },
+            { label: 'ease-out', value: '4' },
+            { label: 'ease-in-out', value: '5' },
+        ],
+    },
+    {   
+        componentType: 'SelectControl',
+        label: "Fill Mode",
+        attrDefValue:{
+            variableName: 'myDropdownFillModeValue',
+            type: 'string',
+            default: 'none',
+        },
+        options:[
+            { label: 'None', value: '0' },
+            { label: 'forwards', value: '1' },
+            { label: 'backwards', value: '2' },
+            { label: 'both', value: '3' },
+        ],
+    },
+    {   
+        componentType: 'SelectControl',
+        label: "Trigger",
+        attrDefValue:{
+            variableName: 'myDropdownTriggerValue',
+            type: 'string',
+            default: 'none',
+        },
+        options:[
+            { label: 'None', value: '0' },
+            { label: 'IntersectionObserver', value: '1' },
+            { label: 'Click', value: '2' },
+            { label: 'Hover', value: '3' },
+        ],
+    },
+    {   
+        componentType: 'NumberControl',
+        label: "Delay (miliseconds)",
+        attrDefValue:{
+            variableName: 'myAnimationDelayValue',
+            type: 'string',
+            default: '0',
+        },
+        max: 10000, 
+        min:  0,
+        step: 1
+    },
+    {   
+        componentType: 'NumberControl',
+        label: "Duration (miliseconds)",
+        attrDefValue:{
+            variableName: 'myAnimationDurationValue',
+            type: 'string',
+            default: '0',
+        },
+        max: 10000, 
+        min:  0,
+        step: 1
+    },
+
 ];
+

@@ -1,29 +1,44 @@
 const { SelectControl } = wp.components;
 import { __experimentalNumberControl as NumberControl } from '@wordpress/components';
-import { animationNameArray } from "../inputs";
+import { allInputsEditor } from "../inputs";
 
 function PanelBodyIntern(props) {
     let { attributes, setAttributes } = props.properties
 
     return (
         <>
-            <SelectControl
-                label="Choose an option"
-                value={attributes.myDropdownAnimationValue}
-                options={animationNameArray}
-                onChange={(value) => setAttributes({ myDropdownAnimationValue: value })}
-            />
-            <NumberControl
-                label="Delay (miliseconds)"
-                onChange={(value) => setAttributes({ myAnimationDelayValue: value })}
-                // onChange={(value) => console.log(typeof(value))}
-                step={1}
-                value={attributes.myAnimationDelayValue}
-                max={ 10000 }
-                min={ 0 }
-                required
-            />
-            
+            {allInputsEditor.map((element, index) => {
+                //For SelectControl Component
+                if(element.componentType === 'SelectControl'){
+                    let variableName = [element.attrDefValue.variableName];
+
+                    return(
+                        <SelectControl
+                        label={element.label}
+                        value={attributes[variableName]}
+                        options={element.options}
+                        onChange={(value) => setAttributes({ [variableName]: value })}
+                        />
+                    )
+                }
+
+                if(element.componentType === 'NumberControl'){
+                    let variableName = [element.attrDefValue.variableName];
+
+                    return(
+                        <NumberControl
+                        label={element.label}
+                        value={attributes[variableName]}
+                        onChange={(value) => setAttributes({ [variableName]: value })}
+                        step={ element.step }
+                        max={ element.max }
+                        min={ element.min }
+                        required
+                        />
+                    )
+                }
+
+            })}
         </>
     );
 }

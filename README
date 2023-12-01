@@ -12,11 +12,13 @@ TODOS:
     AnimationFillMode  (none, forwards, backwards, both)
     TRIGGER (hover, click, IntersectionObserver)
 
-    A-1000-2000-A-A
-
     2-Crear una funcion para agregar las variables iniciales en setting-attribute-default-value.js usando un input
-    3-Crear la funcion que genera el codigo (en save-data.js)
+
+
+
+
+    3-Crear la funcion que genera el codigo (en save-data.js)  A-1000-2000-A-A
     4-decodificar el codigo (usar un return) (en searchClassWithCode.js)
     5-Agregar los Values de las properties correspondientes (en searchClassWithCode.js)
 
--organizar todos los inputs
+-organizar todos los inputs / components - PanelBodyIntern tambien Input??

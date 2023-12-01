@@ -1,4 +1,4 @@
-import { allowedBlockNames } from "./inputs";
+import { allowedBlockNames, attrDefValue, allInputsEditor} from "./inputs";
 
 const setDefaultValue = (settings, blockName) => {
 
@@ -6,15 +6,18 @@ const setDefaultValue = (settings, blockName) => {
 
         settings.attributes = {
             ...settings.attributes,
-            myDropdownAnimationValue: {
-                type: 'string',
-                default: 'none',
-            },
-            myAnimationDelayValue: {
-                type: 'string',
-                default: '0',
-            },
         };
+
+        Object.keys(allInputsEditor).forEach((key) => {
+            let varName = allInputsEditor[key].attrDefValue.variableName;
+            let varValues = {
+                type: allInputsEditor[key].attrDefValue.type,
+                default: allInputsEditor[key].attrDefValue.default,
+            }
+
+            settings.attributes[varName] = varValues;
+        });
+
         return settings;
         
     }

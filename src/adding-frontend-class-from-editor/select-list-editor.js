@@ -16,15 +16,6 @@ const withMyPluginControls = createHigherOrderComponent( ( BlockEdit ) => {
         if (allowedBlockNames.length > 0 && (!allowedBlockNames.includes(props.name))) {
             return <BlockEdit { ...props } />;
         }
-        
-        // Definir el atributo myDropdownAnimationValue si no está definido
-        if (typeof attributes.myDropdownAnimationValue === 'undefined') {
-            setAttributes({ myDropdownAnimationValue: 'none' });
-        }
-        // Definir el atributo myDropdownAnimationValue si no está definido
-        if (typeof attributes.myDropdownAnimationValue === 'undefined') {
-            setAttributes({ myAnimationDelayValue: '0' });
-        }
 
         saveData();
 

@@ -1,3 +1,4 @@
+import codeGenerator from './helpers/code-generator'
 /**
  * Saves data related to the selected block.
  *
@@ -17,6 +18,8 @@ export default function saveData() {
 
     // Checks if there is a selected block.
     if (selectedBlock) {
+
+        codeGenerator(selectedBlock);
         // Gets the classes from the 'myDropdownAnimationValue' attribute or uses an empty array if no classes are present.
         let blockClasses = [];
         if(selectedBlock.attributes.myDropdownAnimationValue){
