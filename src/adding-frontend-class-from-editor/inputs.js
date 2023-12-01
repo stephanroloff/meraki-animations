@@ -17,12 +17,12 @@ export let allInputsEditor = [
             default: 'none',
         },
         options:[
-            { label: 'None', value: 'none' },
-            { label: 'Fade In', value: 'fade-in' },
-            { label: 'Fade In Left', value: 'fade-in-left' },
-            { label: 'Fade In Right', value: 'fade-in-right' },
-            { label: 'Fade In Top', value: 'fade-in-top' },
-            { label: 'Fade In Bottom', value: 'fade-in-bottom' },
+            { label: 'None', value: '0' },
+            { label: 'Fade In', value: '1' },
+            { label: 'Fade In Left', value: '2' },
+            { label: 'Fade In Right', value: '3' },
+            { label: 'Fade In Top', value: '4' },
+            { label: 'Fade In Bottom', value: '5' },
         ],
     },
     {   

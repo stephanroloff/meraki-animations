@@ -19,21 +19,9 @@ export default function saveData() {
     // Checks if there is a selected block.
     if (selectedBlock) {
 
-        codeGenerator(selectedBlock);
-        // Gets the classes from the 'myDropdownAnimationValue' attribute or uses an empty array if no classes are present.
-        let blockClasses = [];
-        if(selectedBlock.attributes.myDropdownAnimationValue){
-            blockClasses.push(selectedBlock.attributes.myDropdownAnimationValue);
-        }
-
-        if(selectedBlock.attributes.myAnimationDelayValue){
-            let delayClass = `animation-delay-${selectedBlock.attributes.myAnimationDelayValue}`
-            blockClasses.push(delayClass);
-        }
-        
-        let blockClassesDestructured = `${blockClasses.join(' ')}`;
+        let animationClass = codeGenerator(selectedBlock);
         
         // Updates the block's classes in the database using the dispatch function.
-        wp.data.dispatch('core/block-editor').updateBlockAttributes(selectedBlock.clientId, { className: blockClassesDestructured });
+        wp.data.dispatch('core/block-editor').updateBlockAttributes(selectedBlock.clientId, { className: animationClass });
     }
 }
