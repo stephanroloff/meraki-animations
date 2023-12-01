@@ -2,13 +2,6 @@ Requisitos
 
 TODOS:
 
-Name AAA (Crear un input para todos los nombres)
-Delay 1000
-Duration 2000
-TimingFunction (ease, linear, ease-in, ease-out, ease-in-out, cubic-bezier(n,n,n,n))
-AnimationFillMode (none, forwards, backwards, both)
-TRIGGER (hover, click, IntersectionObserver)
+1-Organizar todos los inputs (refactorizar mas aun)
 
-1-Decodificar el codigo (usar un return) (en searchClassWithCode.js)
-2-Agregar los Values de las properties correspondientes (en searchClassWithCode.js)
-3-Organizar todos los inputs (refactorizar mas aun)
+IMPORTANTE! Algo que se debe cumplir es que el input del Frontend la variable class, el string debe ser identico al value de Input del Backend (Options)

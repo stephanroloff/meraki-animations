@@ -1,11 +1,16 @@
-import addAnimationProperties  from "./helpers/addAnimationProperties";
-import {animationsData} from './inputs'
+import decode  from "./helpers/decode";
+import asignAnimationsProperties  from "./helpers/asign-animations-properties";
 
+const animatedElements = document.querySelectorAll('[class*="animation-X-"]');
 
-animationsData.forEach((data)=>{
-    //Add Animation name, delay and duration to html element 
-    addAnimationProperties(data);
-});
+if(animatedElements){
+
+    animatedElements.forEach(element => {
+        let arrayCode = decode(element);
+        asignAnimationsProperties(arrayCode, element);
+    });
+    
+}
 
 
 

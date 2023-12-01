@@ -20,8 +20,11 @@ export default function saveData() {
     if (selectedBlock) {
 
         let animationClass = codeGenerator(selectedBlock);
+
+        let animationNameClass = selectedBlock.attributes.myDropdownAnimationValue;
+        const bothClasses = `${animationNameClass} ${animationClass}`;
         
         // Updates the block's classes in the database using the dispatch function.
-        wp.data.dispatch('core/block-editor').updateBlockAttributes(selectedBlock.clientId, { className: animationClass });
+        wp.data.dispatch('core/block-editor').updateBlockAttributes(selectedBlock.clientId, { className: bothClasses });
     }
 }

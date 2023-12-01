@@ -17,7 +17,7 @@ export default function codeGenerator(selectedBlock) {
     })
     
 
-    const code = codeGenerated.join('X');
+    const code = codeGenerated.join('XX'); 
     const animationClass = `animation-X-${code}`
 
     return animationClass;
