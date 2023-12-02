@@ -1,34 +1,45 @@
-import {animationsData} from '../inputs'
+import { animationsData } from '../inputs';
+import triggerClick from "./triggerClick";
+import triggerHandleIntersection from "./triggerHandleIntersection";
+import triggerMouseEnter from "./triggerMouseEnter";
+import triggerDOMContentLoaded from "./triggerDOMContentLoaded";
+
 
 export default function asignAnimationsProperties(arrayCode, element) {
-    console.log(animationsData);
-    console.log(arrayCode);
-
-    let animationName;
+    let animationName = arrayCode[0];
     let trigger = arrayCode[1];
     let timingFunction = arrayCode[2];
     let fillMode = arrayCode[3];
     let numberInSecondsDelay = arrayCode[4] / 1000;
     let numberInSecondsDuration = arrayCode[5] / 1000;
 
-    animationsData.forEach(element =>{
-        if(element.class === arrayCode[0]){
-            animationName = element.animation
+    animationsData.forEach(element => {
+        if(element.class === animationName){
+            animationName = element.animation;
         }
-    })
+    });
 
-    console.log(animationName);
     console.log(trigger);
-    console.log(timingFunction);
-    console.log(fillMode);
-    console.log(numberInSecondsDelay);
-    console.log(numberInSecondsDuration);
-    
-    console.log(element);
 
-    element.style.animationName = `${animationName}`
-    element.style.animationTimingFunction = `${timingFunction}`
-    element.style.animationFillMode = `${fillMode}`;
-    element.style.animationDelay = `${numberInSecondsDelay}s`
-    element.style.animationDuration = `${numberInSecondsDuration}s`
+    switch (trigger) {
+        case 'none':
+            triggerDOMContentLoaded(element, animationName, timingFunction, fillMode, numberInSecondsDelay, numberInSecondsDuration);
+            break;
+
+        case 'IntersectionObserver':
+            triggerHandleIntersection(element, animationName, timingFunction, fillMode, numberInSecondsDelay, numberInSecondsDuration);
+            break;
+
+        case 'click':
+            triggerClick(element, animationName, timingFunction, fillMode, numberInSecondsDelay, numberInSecondsDuration);
+            break;
+            
+        case 'mouseenter':
+            console.log('mouseenter HOLAAA');
+            triggerMouseEnter(element, animationName, timingFunction, fillMode, numberInSecondsDelay, numberInSecondsDuration);
+            break;
+    
+        default:
+            break;
+    }
 }

@@ -37,7 +37,7 @@ export let allInputsEditor = [
             { label: 'None', value: 'none' },
             { label: 'Intersection Observer', value: 'IntersectionObserver' },
             { label: 'Click', value: 'click' },
-            { label: 'Hover', value: 'hover' },
+            { label: 'Mouse Enter', value: 'mouseenter' },
         ],
     },
     {   

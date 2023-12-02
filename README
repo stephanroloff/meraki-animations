@@ -1,7 +1,8 @@
 Requisitos
 
-TODOS:
+Importante! Options value, debe ser el nombre de la clase definida en los scss
 
-1-Organizar todos los inputs (refactorizar mas aun)
-
-IMPORTANTE! Algo que se debe cumplir es que el input del Frontend la variable class, el string debe ser identico al value de Input del Backend (Options)
+TODOS
+-Multiples animaciones, osea que un elemento pueda tener mas de una animacion.
+-Animation OnScrolling
+-Pensar pasos de como agregar una animacion

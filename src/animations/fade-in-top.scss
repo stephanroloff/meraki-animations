@@ -3,16 +3,17 @@
     from {
     position: relative;
     top: -20px;
-    opacity: 0; /* La opacidad inicial es 0 (invisible) */
+    opacity: 0; 
     }
     to {
     top: 20px;
-    opacity: 1; /* La opacidad final es 1 (visible) */
+    opacity: 1; 
     }
 }
 
 .fade-in-top {
     opacity: 0;
+    // animation-name: fadeInTop;
 }
   
   
