@@ -1,4 +1,4 @@
-import { allowedBlockNames, attrDefValue, allInputsEditor} from "./inputs";
+import { allowedBlockNames, allInputsEditor} from "./inputs";
 
 const setDefaultValue = (settings, blockName) => {
 

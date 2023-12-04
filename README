@@ -4,5 +4,9 @@ Importante! Options value, debe ser el nombre de la clase definida en los scss
 
 TODOS
 -Multiples animaciones, osea que un elemento pueda tener mas de una animacion.
--Animation OnScrolling
--Pensar pasos de como agregar una animacion
+
+Paso 1
+Crear nueva linea de opciones en: inputs.js, allInputsEditor -> animationName -> options
+
+Paso 2
+Crear el archivo .scss y dentro el nombre de la clase asignado en "value" del paso anterior.

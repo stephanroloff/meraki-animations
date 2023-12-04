@@ -1,4 +1,4 @@
-const { SelectControl } = wp.components;
+const { SelectControl, CheckboxControl } = wp.components;
 import { __experimentalNumberControl as NumberControl } from '@wordpress/components';
 import { allInputsEditor } from "../inputs";
 
@@ -7,6 +7,12 @@ function PanelBodyIntern(props) {
 
     return (
         <>
+        <CheckboxControl
+            // heading="User"
+            label="Multiple Animations"
+            // help="Is the user a author or not?"
+            checked={ false }
+        />
             {allInputsEditor.map((element, index) => {
                 //For SelectControl Component
                 if(element.componentType === 'SelectControl'){
