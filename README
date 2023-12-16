@@ -4,6 +4,7 @@ Importante! Options value, debe ser el nombre de la clase definida en los scss
 
 TODOS
 -Multiples animaciones, osea que un elemento pueda tener mas de una animacion.
+-Revisar Compatibilidad con Plugin Locomotive Scroll
 
 Paso 1
 Crear nueva linea de opciones en: inputs.js, allInputsEditor -> animationName -> options
