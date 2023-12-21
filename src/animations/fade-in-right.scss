@@ -6,7 +6,8 @@
     opacity: 0; /* La opacidad inicial es 0 (invisible) */
     }
     to {
-    left: -20px;
+    position: relative;
+    left: 0px;
     opacity: 1; /* La opacidad final es 1 (visible) */
     }
 }

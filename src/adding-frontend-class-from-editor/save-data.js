@@ -16,15 +16,43 @@ export default function saveData() {
     // Selects the currently selected block in the block editor.
     let selectedBlock = wp.data.select('core/block-editor').getSelectedBlock();
 
+    //Define a global variable to avoid incompatibility Problems
+    let pluginName = 'meraki-animations';
+    if(!window.customPluginsActive){
+        window.customPluginsActive = [];
+    }else{
+        if(!window.customPluginsActive.includes(pluginName)){
+            window.customPluginsActive.push(pluginName);
+        }
+    }
+
     // Checks if there is a selected block.
     if (selectedBlock) {
-
+        let blockClasses;
         let animationClass = codeGenerator(selectedBlock);
+
+        if(!selectedBlock.attributes.classObject){
+            selectedBlock.attributes.classObject = {}
+        }
 
         let animationNameClass = selectedBlock.attributes.myDropdownAnimationValue;
         const bothClasses = `${animationNameClass} ${animationClass}`;
+
+        selectedBlock.attributes.classObject.animationsClasses = bothClasses
+
+        Object.keys(selectedBlock.attributes.classObject).forEach((key) => {
+            if(blockClasses){
+                blockClasses = blockClasses + " " + selectedBlock.attributes.classObject[key]
+            }else{
+                blockClasses = selectedBlock.attributes.classObject[key]
+            }
+        })
         
         // Updates the block's classes in the database using the dispatch function.
-        wp.data.dispatch('core/block-editor').updateBlockAttributes(selectedBlock.clientId, { className: bothClasses });
+        if(window.customPluginsActive[0] == pluginName){
+            wp.data.dispatch('core/block-editor').updateBlockAttributes(selectedBlock.clientId, { 
+                className: blockClasses
+            });
+        }
     }
 }

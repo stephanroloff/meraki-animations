@@ -6,6 +6,26 @@ const setDefaultValue = (settings, blockName) => {
 
         settings.attributes = {
             ...settings.attributes,
+            //---------------------------
+            //locomotiveScrollPluginIntegration
+            //---------------------------
+            myDropdownScrollTypeValue: {
+                type: 'string',
+                default: 'none',
+            },
+            myDropdownScrollSpeedValue: {
+                type: 'string',
+                default: 'none',
+            },
+            myDropdownScrollSlownessValue: {
+                type: 'string',
+                default: 'none',
+            },
+            classObject: {
+                type: 'object',
+                default: {},
+            },
+            //---------------------------
         };
 
         Object.keys(allInputsEditor).forEach((key) => {
@@ -23,7 +43,7 @@ const setDefaultValue = (settings, blockName) => {
     }
 };
 
-wp.hooks.addFilter('blocks.registerBlockType', 'mi-plugin/establecer-atributo-por-defecto-paragraph', (settings, name) => {
+wp.hooks.addFilter('blocks.registerBlockType', 'my-plugin/meraki-animations', (settings, name) => {
     return setDefaultValue(settings, name);
 });
 

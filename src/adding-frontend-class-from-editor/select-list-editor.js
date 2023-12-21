@@ -40,6 +40,6 @@ const withMyPluginControls = createHigherOrderComponent( ( BlockEdit ) => {
 
 wp.hooks.addFilter(
     'editor.BlockEdit',
-    'my-plugin/with-inspector-controls',
+    'my-plugin-meraki-animations/with-inspector-controls',
     withMyPluginControls
 );
