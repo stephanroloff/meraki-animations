@@ -23,6 +23,7 @@ export let allInputsEditor = [
             { label: 'Fade In Right', value: 'fade-in-right' },
             { label: 'Fade In Top', value: 'fade-in-top' },
             { label: 'Fade In Bottom', value: 'fade-in-bottom' },
+            { label: 'Background to Red', value: 'to-red' },
         ],
     },
     {   

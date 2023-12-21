@@ -1,13 +1,21 @@
 Requisitos
 
-Importante! Options value, debe ser el nombre de la clase definida en los scss
+(\*)Importante! Options value, debe ser el nombre de la clase definida en los scss
 
 TODOS
 -Multiples animaciones, osea que un elemento pueda tener mas de una animacion.
 -Revisar Compatibilidad con Plugin Locomotive Scroll
 
 Paso 1
-Crear nueva linea de opciones en: inputs.js, allInputsEditor -> animationName -> options
+Crear nueva linea de opciones en:
+src > adding-frontend-class-from-editor > inputs.js, allInputsEditor -> Animations Name -> options (\*)
+El value será el nombre de la clase usada en el scss.
 
 Paso 2
-Crear el archivo .scss y dentro el nombre de la clase asignado en "value" del paso anterior.
+Crear el archivo .scss (en src > animations) y dentro el nombre de la clase asignado en "value" del paso anterior.
+Y agregar el archivo creado al index.scss
+
+Paso 3
+Agregar nueva linea en el archivo:
+src > animations > inputs.js
+Con el nombre de la clase y de la animacion definido en el archivo scss creado en el paso anterior.

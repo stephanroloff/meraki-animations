@@ -18,5 +18,9 @@ export let animationsData  = [
     {
         class: 'fade-in-bottom',
         animation: 'fadeInBottom'
+    },
+    {
+        class: 'to-red',
+        animation: 'toRed'
     }
 ]

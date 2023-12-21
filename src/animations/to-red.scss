@@ -1,0 +1,16 @@
+/* Define la animación de fade-in */
+@keyframes toRed {
+    from {
+    // background-color: inherit;
+    color: inherit;
+}
+    to {
+    // background-color: red;
+    color: red;
+    }
+}
+
+.to-red {
+    animation-name: toRed;
+}
+  
