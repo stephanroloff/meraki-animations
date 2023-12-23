@@ -6,12 +6,13 @@
     opacity: 0; 
     }
     to {
-    top: 20px;
+    position: relative;
+    top: 0px;
     opacity: 1; 
     }
 }
 
-.fade-in-top {
+.animation-meraki-fade-in-top {
     opacity: 0;
     // animation-name: fadeInTop;
 }

@@ -21,10 +21,6 @@ const setDefaultValue = (settings, blockName) => {
                 type: 'string',
                 default: 'none',
             },
-            classObject: {
-                type: 'object',
-                default: {},
-            },
             //---------------------------
         };
 

@@ -6,12 +6,13 @@
     opacity: 0; /* La opacidad inicial es 0 (invisible) */
     }
     to {
-    bottom: 20px;
+    position: relative;
+    bottom: 0px;
     opacity: 1; /* La opacidad final es 1 (visible) */
     }
 }
 
-.fade-in-bottom {
+.animation-meraki-fade-in-bottom {
     // animation-name: fadeInBottom;
     opacity: 0;
 }

@@ -6,7 +6,6 @@ const { createHigherOrderComponent } = wp.compose;
 const { InspectorControls } = wp.blockEditor;
 const { PanelBody } = wp.components;
 import { allowedBlockNames } from "./inputs";
-import saveData from "./save-data";
 import PanelBodyIntern from './components/PanelBodyInternElements';
 
 const withMyPluginControls = createHigherOrderComponent( ( BlockEdit ) => {
@@ -16,8 +15,6 @@ const withMyPluginControls = createHigherOrderComponent( ( BlockEdit ) => {
         if (allowedBlockNames.length > 0 && (!allowedBlockNames.includes(props.name))) {
             return <BlockEdit { ...props } />;
         }
-
-        saveData();
 
         return (
             <>

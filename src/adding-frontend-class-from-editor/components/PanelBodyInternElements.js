@@ -1,9 +1,13 @@
 const { SelectControl, CheckboxControl } = wp.components;
 import { __experimentalNumberControl as NumberControl } from '@wordpress/components';
 import { allInputsEditor } from "../inputs";
+import saveData from "../save-data";
+
 
 function PanelBodyIntern(props) {
     let { attributes, setAttributes } = props.properties
+
+    saveData();    
 
     return (
         <>

@@ -17,7 +17,7 @@ export let allInputsEditor = [
             default: 'none',
         },
         options:[
-            { label: 'None', value: '0' },
+            { label: 'None', value: 'none' },
             { label: 'Fade In', value: 'fade-in' },
             { label: 'Fade In Left', value: 'fade-in-left' },
             { label: 'Fade In Right', value: 'fade-in-right' },

@@ -9,7 +9,7 @@ TODOS
 Paso 1
 Crear nueva linea de opciones en:
 src > adding-frontend-class-from-editor > inputs.js, allInputsEditor -> Animations Name -> options (\*)
-El value será el nombre de la clase usada en el scss.
+El value será el nombre de la clase usada en el scss (debe comenzar obligatoriamente con "animation-meraki-").
 
 Paso 2
 Crear el archivo .scss (en src > animations) y dentro el nombre de la clase asignado en "value" del paso anterior.
