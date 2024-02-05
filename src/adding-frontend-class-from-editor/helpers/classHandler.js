@@ -9,8 +9,6 @@ export function classHandler(selectedBlock, animationClass) {
 
     const bothClasses = `animation-meraki-${animationNameClass} ${animationClass}`;
     
-    console.log('ALGO HAY', editorClass);
-    console.log('dveulvo', bothClasses);
     if(editorClass){
         let editorClassArray = editorClass.split(" ");
 
@@ -32,17 +30,10 @@ export function classHandler(selectedBlock, animationClass) {
         if(!replaced2){
             newEditorClassArray.push(`animation-meraki-${animationNameClass}`);
         }
-
         let newString = newEditorClassArray.join(" ");
-        
-        // console.log('Clase Editor, ', newEditorClassArray);
-        // console.log('Scroll Class', ScrollClass);
-        // console.log('String Class', newString);
 
         return newString;
     }else{
-        // newEditorClassArray.push(bothClasses);
-        // let newString = newEditorClassArray.join(" ");
         return bothClasses;
     }
 }

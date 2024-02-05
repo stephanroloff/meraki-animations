@@ -1,10 +1,7 @@
 Requisitos
-
 (\*)Importante! Options value, debe ser el nombre de la clase definida en los scss
 
-TODOS
--Multiples animaciones, osea que un elemento pueda tener mas de una animacion.
--Revisar Compatibilidad con Plugin Locomotive Scroll
+Tutorial "Como crear una nueva animacion"
 
 Paso 1
 Crear nueva linea de opciones en:
@@ -19,3 +16,6 @@ Paso 3
 Agregar nueva linea en el archivo:
 src > animations > inputs.js
 Con el nombre de la clase y de la animacion definido en el archivo scss creado en el paso anterior.
+
+TODOS
+-Multiples animaciones, osea que un elemento pueda tener mas de una animacion.
